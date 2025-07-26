@@ -12,6 +12,7 @@
   - Modular structure for easy extension with more algorithms
 
 ***Algorithms Included***
+
   **Caesar Cipher**
 
     -   Shift-based character substitution
