@@ -1,10 +1,10 @@
-# **Encryption‑Decryption‑Algo‑CPP**
+# **Caesar Cipher – C++ Implementation**
 
-A growing repository of encryption and decryption algorithms implemented in **C++**, structured by algorithm types for clean organization and easy exploration.
+A clean and modular C++ implementation of the **Caesar Cipher**, structured for readability and further extension. This folder is part of a larger repository on classical encryption algorithms.
 
 ---
 
-## ** Folder Contents**
+## **Folder Contents**
 
 ```
 Caesar Cipher/
@@ -19,59 +19,78 @@ Caesar Cipher/
 
 ## **Project Summary**
 
-This repository contains a **modern C++ implementation of the Caesar cipher**, featuring both encryption and decryption capabilities via a command‑line interface.  
-Supported features:
+This project implements a **modernized Caesar Cipher** in C++, featuring both encryption and decryption support via a simple CLI.  
+It is designed for clarity, correctness, and easy testing.
 
-- **Alphabetic characters only**: converts to uppercase before processing.
-- **Non‑alphabet characters (spaces, punctuation, digits)** remain unchanged.
-- **Wrap-around logic** ensures correct behavior near the ends of the alphabet.
-- The main program runs in a loop, offering interactive encryption, decryption, or exit.
+Key features:
+- **Alphabetic characters only**: input is converted to uppercase
+- **Non-alphabet characters** (spaces, punctuation, symbols, digits) remain unchanged
+- **Wrap-around logic** ensures correctness near the edges of the alphabet
+- **Handles any integer shift**, including large values like 65 or 104
 
 ---
 
 ## **How It Works**
 
-The Caesar cipher shifts each letter by a **fixed integer value**:
+The **Caesar Cipher** is a classical substitution cipher. Each letter in the plaintext is shifted by a fixed number of positions in the alphabet.
 
-- **Encryption** adds the shift to each letter, wrapping past `'Z'`.
-- **Decryption** subtracts the shift, wrapping below `'A'`.
-- Conversion to uppercase ensures consistency.
-- Non-letter characters are **not modified**.
+Example (Shift = 3):
+```
+A → D, B → E, ..., X → A, Y → B, Z → C
+```
 
-Large or out-of-range shift values (e.g. 65) are handled correctly using modulus arithmetic (`shift % 26`) to keep it within [0–25].
+### **Encryption**
+- Add shift to each uppercase letter
+- Wrap around if the result goes past `'Z'`
+
+### **Decryption**
+- Subtract shift from each letter
+- Wrap around if the result goes before `'A'`
+
+Non-letter characters are ignored during both operations.
+
+Large shift values are normalized using:
+```cpp
+effectiveShift = shift % 26;
+```
 
 ---
 
 ## **Usage Instructions**
 
-1. **Clone the repository**  
+1. **Clone the repository**
    ```
    git clone https://github.com/T-Bugging/Encryption-Decryption-Algo-cpp.git
-   cd Encryption-Decryption-Algo-cpp/Caesar
+   cd Encryption-Decryption-Algo-cpp/Caesar\ Cipher
    ```
 
-2. **Compile the program**  
+2. **Compile the program**
    ```
    g++ main.cpp Encrypt.cpp Decrypt.cpp -o caesar
    ```
 
-3. **Run**  
+3. **Run**
    ```
    ./caesar       # Linux/macOS
    caesar.exe     # Windows
    ```
 
-4. **Use the interactive menu**:
+4. **Use the interactive menu**
    - Press **1** to encrypt a message  
-   - Press **2** to decrypt  
+   - Press **2** to decrypt a message  
    - Press **3** to exit
 
 ---
 
-
-## ** Contact**
+## **Contact**
 
 Created by **Uday**  
 Feel free to **clone, explore, or tinker** with the project.  
-Open to feedback, contributions, or collaboration ideas!
+Open to feedback, ideas, or contributions.
+
+---
+
+This project is part of the main repository:  
+[Encryption-Decryption-Algo-cpp](https://github.com/T-Bugging/Encryption-Decryption-Algo-cpp)
+
 
