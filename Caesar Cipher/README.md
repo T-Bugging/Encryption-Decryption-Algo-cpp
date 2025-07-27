@@ -1,85 +1,77 @@
-Caesar Cipher - C++ Implementation
- Project Summary
-This project implements a modernized Caesar cipher in C++, featuring both encryption and decryption functions. It handles:
+# **Encryption‑Decryption‑Algo‑CPP**
 
-Alphabetic characters only (A–Z), preserving case by converting to uppercase.
+A growing repository of encryption and decryption algorithms implemented in **C++**, structured by algorithm types for clean organization and easy exploration.
 
-Spaces, punctuation, digits, and other symbols remain unchanged.
+---
 
-Wrap-around logic for letters near 'Z' or 'A'.
+## ** Folder Contents**
 
-A command-line interactive mode to encrypt and decrypt in one run.
+```
+Caesar Cipher/
+├── Encrypt.cpp       # Caesar encryption logic
+├── Decrypt.cpp       # Caesar decryption logic
+├── caesar.h          # Shared function declarations
+├── main.cpp          # Interactive CLI to run encryption/decryption
+└── README.md         # This file
+```
 
- How It Works – Caesar Cipher Explained
-The Caesar cipher is a substitution cipher that shifts each letter in a message by a fixed number of positions in the alphabet.
-For example, with a shift of 3:
+---
 
-css
-Copy
-Edit
-A → D, B → E … X → A, Y → B, Z → C
-Encryption: Add shift to each letter and wrap around past 'Z'.
+## **Project Summary**
 
-Decryption: Subtract shift, and wrap before 'A' by adding 26.
+This repository contains a **modern C++ implementation of the Caesar cipher**, featuring both encryption and decryption capabilities via a command‑line interface.  
+Supported features:
 
-This approach ensures reversible, consistent encryption of A–Z characters only.
+- **Alphabetic characters only**: converts to uppercase before processing.
+- **Non‑alphabet characters (spaces, punctuation, digits)** remain unchanged.
+- **Wrap-around logic** ensures correct behavior near the ends of the alphabet.
+- The main program runs in a loop, offering interactive encryption, decryption, or exit.
 
-  Features
-Encryption Function (caesarCipherEncrypt)
-Converts letters to uppercase
+---
 
-Shifts letters by the chosen shift value
+## **How It Works**
 
-Wraps around if the letter goes beyond 'Z'
+The Caesar cipher shifts each letter by a **fixed integer value**:
 
-Leaves non-alphabetic characters intact
+- **Encryption** adds the shift to each letter, wrapping past `'Z'`.
+- **Decryption** subtracts the shift, wrapping below `'A'`.
+- Conversion to uppercase ensures consistency.
+- Non-letter characters are **not modified**.
 
-Decryption Function (caesarCipherDecrypt)
-Applies the reverse procedure:
+Large or out-of-range shift values (e.g. 65) are handled correctly using modulus arithmetic (`shift % 26`) to keep it within [0–25].
 
-Subtracts shift
+---
 
-Wraps around below 'A'
+## **Usage Instructions**
 
-Ignores non-alphabetic characters
+1. **Clone the repository**  
+   ```
+   git clone https://github.com/T-Bugging/Encryption-Decryption-Algo-cpp.git
+   cd Encryption-Decryption-Algo-cpp/Caesar
+   ```
 
-Interactive CLI in main()
-Prompts user for input message and shift value
+2. **Compile the program**  
+   ```
+   g++ main.cpp Encrypt.cpp Decrypt.cpp -o caesar
+   ```
 
-Prints out both the encrypted and decrypted versions
+3. **Run**  
+   ```
+   ./caesar       # Linux/macOS
+   caesar.exe     # Windows
+   ```
 
-Shows real-time validation that encryption and decryption reverse each other
+4. **Use the interactive menu**:
+   - Press **1** to encrypt a message  
+   - Press **2** to decrypt  
+   - Press **3** to exit
 
-Run:
+---
 
-bash
-Copy
-Edit
-./caesar
-Examples:
 
-Enter message: Hello, my friend!
+## ** Contact**
 
-Shift value: 3
+Created by **Uday**  
+Feel free to **clone, explore, or tinker** with the project.  
+Open to feedback, contributions, or collaboration ideas!
 
-App prints:
-
-pgsql
-Copy
-Edit
-Encrypted Message: KHOOR, PB IULHQG!
-Decrypted Message: HELLO, MY FRIEND!
-
-Why This Is Valuable
-Demonstrates mastery of basic C++ string and character manipulation.
-
-Highlights modular arithmetic and wrap-around logic.
-
-Handles real-world edge cases (punctuation, case-insensitivity, symbol preservation).
-
-Provides a solid foundation to extend into more advanced ciphers like Vigenère or Playfair.
-
- 
- Contact
-Created by Uday.
-Feel free to clone, tinker, or reach out for feedback.
