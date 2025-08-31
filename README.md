@@ -1,23 +1,42 @@
-****Cipher Collection****
+# C++ Mini Projects
 
-  A curated set of classical and modern encryption-decryption algorithms implemented in C++. This repository is intended as a growing archive of cryptographic methods learned during college coursework and         personal exploration.
+This repository is a collection of **small, standalone C++ programs** written in C++.  
+Each program is usually contained in a **single file** (`.cpp`) and focuses on practicing one concept, algorithm, or idea.  
 
-*Features*
-  - Clean, readable C++ implementations
- 
-  - Support for both encryption and decryption functions
- 
-  - Preserves punctuation, spaces, and casing wherever appropriate
- 
-  - Modular structure for easy extension with more algorithms
+This repository serves as a **playground** for quick C++ projects — a kind of coding diary that grows over time.  
 
-***Algorithms Included***
+------------------------------------------------------------
 
-  **Caesar Cipher**
+# **STRUCTURE**
+All files are independent and can be compiled separately.  
+Example:
+Cpp-Mini-Projects/
+│── CaesarCipher.cpp
 
-    -   Shift-based character substitution
-  
-    -   Handles upper/lowercase letters and skips non-alphabetic characters
+------------------------------------------------------------
 
-(More algorithms will be added soon.)
+# **HOW TO RUN**
+Compile and run any program using g++:
+g++ CaesarCipher.cpp -o output
+./output
+
+------------------------------------------------------------
+
+# **CURRENT PROGRAMS**
+- CaesarCipher.cpp → A simple text encryption using Caesar shift.  
+
+------------------------------------------------------------
+
+# **PURPOSE**
+- Practice C++ syntax and problem solving.  
+- Build small utilities and games.  
+- Keep a consistent coding habit.  
+- Share experiments publicly on GitHub.  
+
+------------------------------------------------------------
+
+# **NOTES**
+- Each file is **self-contained**.  
+- Projects may range from very simple (prime checkers, converters) to slightly more complex (games, text-based utilities).  
+- If a project grows bigger, it will move to its **own repository**.  
 
